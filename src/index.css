@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 70% 96%;
+    --foreground: 20 10% 20%;
+
+    --card: 45 70% 98%;
+    --card-foreground: 20 10% 20%;
+
+    --popover: 45 70% 98%;
+    --popover-foreground: 20 10% 20%;
+
+    --primary: 40 90% 50%; /* Mustard yellow */
+    --primary-foreground: 20 10% 20%;
+
+    --secondary: 43 80% 92%;
+    --secondary-foreground: 20 10% 20%;
+
+    --muted: 43 70% 92%;
+    --muted-foreground: 20 10% 60%;
+
+    --accent: 20 80% 45%; /* Terracotta accent */
+    --accent-foreground: 45 70% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 70% 98%;
+
+    --border: 43 30% 85%;
+    --input: 43 30% 85%;
+    --ring: 40 90% 50%; /* Mustard yellow */
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 45 70% 98%;
+    --sidebar-foreground: 20 10% 20%;
+    --sidebar-primary: 40 90% 50%; /* Mustard yellow */
+    --sidebar-primary-foreground: 20 10% 20%;
+    --sidebar-accent: 20 80% 90%;
+    --sidebar-accent-foreground: 20 80% 30%;
+    --sidebar-border: 43 30% 85%;
+    --sidebar-ring: 43 30% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 dark:bg-black/50 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-md;
+  }
+  
+  .section-title {
+    @apply text-2xl md:text-3xl font-serif font-semibold mb-6 text-deepBlue dark:text-gold;
+  }
+  
+  .subtle-border {
+    @apply border border-gray-200 dark:border-gray-800 rounded-lg;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .map-container {
+    @apply h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden shadow-md;
+  }
+  
+  .scroll-container {
+    @apply flex space-x-4 overflow-x-auto pb-4 scrollbar-none;
+  }
+  
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-terracotta via-deepBlue to-gold;
+  }
+
+  /* Leaflet popup customization */
+  .custom-popup .leaflet-popup-content-wrapper {
+    @apply bg-white dark:bg-gray-800 shadow-md border-none rounded-lg overflow-hidden p-0;
+  }
+  
+  .custom-popup .leaflet-popup-content {
+    @apply m-0 w-72;
+  }
+  
+  .custom-popup .leaflet-popup-tip {
+    @apply bg-white dark:bg-gray-800;
+  }
+  
+  .site-popup h3 {
+    @apply px-3 pt-2;
+  }
+  
+  .site-popup p {
+    @apply px-3;
+  }
+  
+  .site-popup button {
+    @apply m-3 mt-2;
+  }
+}
